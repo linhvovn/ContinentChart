@@ -1,0 +1,101 @@
+@baseCountry-color: #4D926F;
+
+@selected-color: #B3CCE6;
+@selected-stroke: #80B3CC;
+
+@zoom-fill:  red;
+
+
+@chartHolder-start-color:#FFFFFF;
+@chartHolder-end-color:#CEDBEB;
+
+body, html {
+  height: 100%;
+}
+
+.bizChartHolder{
+	padding-top:5px;
+	background-color:@chartHolder-end-color;
+	background-position: center center; 
+	background-repeat: no-repeat; 
+	/* Safari 4-5, Chrome 1-9 */ 
+	/* Can't specify a percentage size? Laaaaaame. */ 
+	background: -webkit-gradient(radial, center center, 0, center center, 460, from(@chartHolder-start-color), to(@chartHolder-end-color)); /* Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-radial-gradient(circle, @chartHolder-start-color, @chartHolder-end-color); 
+	/* Firefox 3.6+ */ 
+	background: -moz-radial-gradient(circle, @chartHolder-start-color, @chartHolder-end-color); 
+	/* IE 10 */ 
+	background: -ms-radial-gradient(circle, @chartHolder-start-color,  @chartHolder-end-color); 
+	/* Opera couldn't do radial gradients, then at some point they started supporting the -webkit- syntax, how it kinda does but it's kinda broken (doesn't do sizing) */
+}
+
+.baseCountry{
+}
+
+.selected, .selected .topFace, .selected .rightRect{
+ 	fill: @selected-color !important;
+ 	stroke: @selected-stroke;
+ 	opacity:0.8;
+}
+
+.titleOuterDiv{
+	vertical-align:bottom;
+}
+
+.titleDiv{
+	line-height:1em;
+	color:black; //should be removed
+	vertical-align:bottom;
+	font-weight:bold;
+	font-size: 1em;
+	text-align:center;
+}
+
+.zoom{
+	fill: (@selected-color /2) !important;
+	stroke: black;
+ 	opacity:0.8;
+}
+
+div.bizTooltip {   
+  position: absolute;  
+  color: white;         
+  text-align: left;           
+  width: auto;                  
+  height: auto;                 
+  padding: 10px;             
+  font: 1.5em sans-serif;        
+  background: lightsteelblue;   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;      
+  line-height:2; 
+  /*top:20px !important;
+  left:50% !important;
+  margin-left: -500px;*/
+}
+
+.iframeToolTip{
+	position: relative;
+	width: 1000px;
+    height: 600px;
+    background-color: white;
+    opacity:1;
+}
+
+[class*='titlecontinent']{
+	font-size: 1.5em;
+}
+
+[class*='titlechart']{
+	font-size: 2em;
+	color:#BD362F;
+}
+
+[class*='titlelegendItem']{
+	font-size: 0.7em;
+	white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+}
